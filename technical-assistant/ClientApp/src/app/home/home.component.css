@@ -1,0 +1,123 @@
+#main-chat {
+  width: 340px;
+  height: 100%;
+  min-height: 96vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+app-root {
+  min-height: 100vh;
+  position: relative;
+}
+
+.mc-options {
+  display: flex;
+  background-color: rgb(194, 194, 194);
+}
+
+.full-conversation-button {
+  margin-left: auto !important;
+}
+
+.chopt-button img {
+  width: 40px;
+  height: 40px;
+}
+
+.chopt-button {
+  margin: 0px 10px 0 5px;
+  margin-top: 4px;
+  width: 40px;
+  height: 40px;
+
+  /* Animations */
+  will-change: background-color;
+  transition: background-color .4s;
+  background-color: transparent;
+}
+
+.chopt-button:hover {
+  background-color: rgb(252, 206, 122);
+}
+
+.person-counseling-adviser-button,
+.img-person-counseling-adviser {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.minimize-chat-button {
+  margin-right: 3px;
+}
+
+.mc-conversation {
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: rgb(238, 238, 238);
+  height: 310px;
+}
+
+.mc-conversation .message-bot {
+  background-color: rgb(252, 206, 122);
+  margin-right: 40px;
+}
+
+.mc-conversation .message-user {
+  background-color: rgb(142, 192, 250);
+  margin-left: 40px;
+}
+
+.message-bot,
+.message-user {
+  margin-bottom: 10px;
+  padding: 6px;
+}
+
+.mc-text-entry {
+  background-color: rgb(194, 194, 194);
+}
+
+.mc-text-entry .text-entry {
+  background-color: rgb(247, 247, 247);
+  height: 40px;
+  margin: 10px 10px 0px;
+  padding: 10px;
+  border-radius: 3px;
+  overflow-y: auto;
+}
+
+.mc-text-entry .text-entry:focus-visible {
+  outline: unset;
+}
+
+.send-text-entry-button {
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  margin: 0px 10px 10px auto;
+  letter-spacing: 1.2px;
+  
+  /* Animations */
+  will-change: background-color, box-shadow;
+  transition: background-color .4s, box-shadow .4s;
+  background-color: rgb(85, 164, 255);
+  box-shadow: 0 0 0 rgb(85, 164, 255);
+}
+
+.send-text-entry-button:hover {
+  background-color: rgb(127, 186, 253);
+  box-shadow: 0 0 5px rgb(85, 164, 255);
+
+}

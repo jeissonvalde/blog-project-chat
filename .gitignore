@@ -10,6 +10,21 @@
 *.userosscache
 *.sln.docstates
 
+## FRONTEND
+ANGULAR-MY-APP
+technical-assistant/ClientApp/.angular
+technical-assistant/ClientApp/node_modules
+technical-assistant/ClientApp/package-lock.json
+.git/
+.gitignore
+
+## BACKEND
+technical-assistant/.vscode
+.gitignore
+
+
+
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

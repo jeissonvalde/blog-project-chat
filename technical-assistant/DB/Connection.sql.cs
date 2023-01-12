@@ -1,7 +1,7 @@
 using System.Data.SqlClient;
 
 // namespace technical_assistant.Datos
-namespace technical_assistant.Data
+namespace technical_assistant.DB
 {
     public class Connection
     {

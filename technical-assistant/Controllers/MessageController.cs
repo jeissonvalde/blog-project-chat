@@ -1,48 +1,30 @@
 ﻿using technical_assistant.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using technical_assistant.DB;
 
 namespace technical_assistant.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class MessageController : Controller
     {
-        // GET: MessageController
-        public ActionResult Index()
+
+        private readonly ILogger<MessageController> _logger;
+
+        public MessageController(ILogger<MessageController> logger)
         {
-            return View();
+            _logger = logger;
         }
 
-        // GET: MessageController/Details/5
-        public ActionResult Details(int id)
+        // Get first messages for wellcome.
+        [HttpGet]
+        public List<MessageModel> Get()
         {
-            return View();
-        }
+            var MessageInstance = new MessageDataTest();
+            var m_data = MessageInstance.FindConversationTest("98A08VNA08");
 
-        // GET: MessageController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: MessageController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: MessageController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
+            return m_data;
         }
 
         // POST: MessageController/Edit/5

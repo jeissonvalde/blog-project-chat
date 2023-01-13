@@ -14,10 +14,10 @@ export class HomeComponent {
   public imgClose = 'https://firebasestorage.googleapis.com/v0/b/tech-website-59d72.appspot.com/o/images%2Ficons%2Fclose-96-p2.png?alt=media&token=a1dde398-4aff-4d53-8176-684b6695e2ea';
 
   // Server communications
-  public conversation: Message[] = [];
+  public conversation: MessageSimple[] = [];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Message[]>(baseUrl + 'conversation').subscribe(result => {
+    http.get<MessageSimple[]>(baseUrl + 'message').subscribe(result => {
 
       console.log('result', result)
       this.conversation = result;
@@ -25,15 +25,9 @@ export class HomeComponent {
   }
 }
 
+type MessageSimple = Omit<Message, 'TransmitterId' | 'ReceiverId'> 
+
 interface Message {
-  TransmitterName: string;
-  ReceiverName: string;
-  Content: string;
-  Timestamp: number;
-}
-
-
-interface Message2 {
   TransmitterId: string;
   TransmitterName: string;
   ReceiverId: string;
